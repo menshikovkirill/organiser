@@ -1,0 +1,11 @@
+.header{
+    height: 65px;
+    box-shadow: 0px 1px 10px rgba(206, 206, 206, 0.7);
+    border-radius: 8px; 
+
+    &:hover{
+        background-color: rgba(243, 243, 245, 0.5);
+    }
+
+    cursor: pointer;
+}
