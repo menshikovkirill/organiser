@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../slider';
 import ContentTable from '../content-table';
+import WrittableInput from '../writtable-input';
 
 import './body-sheulder.scss';
 
@@ -19,7 +20,6 @@ const TaskContent = ({data, isBodyVisible, isDayNow}) => {
             <ContentTable 
                 header={["", "Задача", "Группа", "Время"]}
                 body={<TaskLine data={data}/>}/>
-
         </div>
     )
 }
@@ -63,7 +63,7 @@ class TaskLine extends React.Component{
         let list = this.props.data.map((elem, ind) =>{
             return (<tr key={ind} className={this.state.isCrossedLineArray[ind]? "crossed": ""}>
                 <td onClick={() => this.crosedLine(ind)}><CircleTableElem isClicked={this.state.isCrossedLineArray[ind]}/></td>
-                <td>{elem.task}</td>
+                <td><WrittableInput initialValue={elem.task}/></td>
                 <td className="group">{elem.group}</td>
                 <td>{elem.time}</td>
             </tr>)
