@@ -38,9 +38,9 @@ const WeekDayContent = ({data, isDayNow, name}) =>{
     );
 }
 
-const CircleTableElem = ({isActive}) =>{
+const CircleTableElem = ({isClicked}) =>{
     return (
-        <span className={isActive? "circle crossed": "circle"}></span>
+        <div className={isClicked? "circle crossed": "circle"}></div>
     )
 }
 
@@ -51,15 +51,18 @@ class TaskLine extends React.Component{
 
         this.state = {isCrossedLineArray: new Array(this.props.data.length)}
     }
+    
     crosedLine(ind){
         let oldArray = this.state.isCrossedLineArray;
         oldArray[ind] = !oldArray[ind];
-        this.setState({isCrossedLineArray: oldArray})
+        this.setState({isCrossedLineArray: oldArray});
+        //add AJAX query
     }
+    
     render(){
         let list = this.props.data.map((elem, ind) =>{
-            return (<tr key={ind} className={this.state.isCrossedLine? "crossed": ""}>
-                <td><CircleTableElem onClick={(ind) => this.crosedLine(ind)} /></td>
+            return (<tr key={ind} className={this.state.isCrossedLineArray[ind]? "crossed": ""}>
+                <td onClick={() => this.crosedLine(ind)}><CircleTableElem isClicked={this.state.isCrossedLineArray[ind]}/></td>
                 <td>{elem.task}</td>
                 <td className="group">{elem.group}</td>
                 <td>{elem.time}</td>

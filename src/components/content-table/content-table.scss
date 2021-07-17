@@ -20,17 +20,7 @@ table{
         font-size: 19px;
         border-top:none;
     }
-}
-.circle {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 1px solid #CECECE;
-    display: inline-block;
-    cursor: pointer; 
-
-    &.crossed{
-        background-color: red;
+    tr.crossed{
+        text-decoration: line-through;
     }
 }
