@@ -21,18 +21,6 @@
     .day-body{
         background: rgba(243, 243, 245, 0.5);
         border-radius: 8px;
-    }
-}
-.circle {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 1px solid #CECECE;
-    display: inline-block;
-    cursor: pointer; 
-
-    &.crossed{
-        background-color: #CECECE;
-    }
+        padding:0px 30px 10px 30px;
+    } 
 }

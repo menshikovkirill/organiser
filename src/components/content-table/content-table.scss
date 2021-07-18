@@ -1,6 +1,7 @@
-table{
+.content-table{
     width:100%;
     border-collapse: collapse;
+    padding:0px 30px;
     th, td{
         width: 70px;
         height: 50px;
@@ -25,5 +26,21 @@ table{
     }
     textarea{
         width: 90%;
+    }
+}
+
+.add-item-button{
+    text-align: center;
+    p{
+        font-size: 19px;
+        color:#C4C4C4;
+        &::before{
+            content: "+";
+            margin-right: 7px;
+        }
+        &:hover{
+            cursor: pointer;
+            color:burlywood;
+        }
     }
 }
